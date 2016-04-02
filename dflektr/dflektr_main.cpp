@@ -2,7 +2,7 @@
 #include <time.h>
 #include "cListener.h"
 #include "cCmdParse.h"
-#include "cWind.h"
+//#include "cWind.h"
 
 #ifdef WAIT_INTERVENTION
 HANDLE ghMutex;
