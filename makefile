@@ -45,7 +45,7 @@ builddir = .
 
 all: $(builddir)/dflektr.out
 
-$(builddir)/dflektr: $(builddir)/dflektr_cAnsiUtil.o $(builddir)/dflektr_cCmdParse.o $(builddir)/dflektr_cDeflector.o $(builddir)/dflektr_cListener.o $(builddir)/dflektr_dflektr_main.o
+$(builddir)/dflektr.out: $(builddir)/dflektr_cAnsiUtil.o $(builddir)/dflektr_cCmdParse.o $(builddir)/dflektr_cDeflector.o $(builddir)/dflektr_cListener.o $(builddir)/dflektr_dflektr_main.o
 	$(CXX) -o $@ $(LDFLAGS) $(builddir)/dflektr_cAnsiUtil.o $(builddir)/dflektr_cCmdParse.o $(builddir)/dflektr_cDeflector.o $(builddir)/dflektr_cListener.o $(builddir)/dflektr_dflektr_main.o -pthread
 
 $(builddir)/dflektr_cAnsiUtil.o: dflektr/cAnsiUtil.cpp
