@@ -48,20 +48,20 @@ all: $(builddir)/dflektr
 $(builddir)/dflektr: $(builddir)/dflektr_cAnsiUtil.o $(builddir)/dflektr_cCmdParse.o $(builddir)/dflektr_cDeflector.o $(builddir)/dflektr_cListener.o $(builddir)/dflektr_dflektr_main.o
 	$(CXX) -o $@ $(LDFLAGS) $(builddir)/dflektr_cAnsiUtil.o $(builddir)/dflektr_cCmdParse.o $(builddir)/dflektr_cDeflector.o $(builddir)/dflektr_cListener.o $(builddir)/dflektr_dflektr_main.o -pthread
 
-$(builddir)/dflektr_cAnsiUtil.o: cAnsiUtil.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread cAnsiUtil.cpp
+$(builddir)/dflektr_cAnsiUtil.o: dflektr/cAnsiUtil.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread dflektr/cAnsiUtil.cpp
 
-$(builddir)/dflektr_cCmdParse.o: cCmdParse.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread cCmdParse.cpp
+$(builddir)/dflektr_cCmdParse.o: dflektr/cCmdParse.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread dflektr/cCmdParse.cpp
 
-$(builddir)/dflektr_cDeflector.o: cDeflector.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread cDeflector.cpp
+$(builddir)/dflektr_cDeflector.o: dflektr/cDeflector.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread dflektr/cDeflector.cpp
 
-$(builddir)/dflektr_cListener.o: cListener.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread cListener.cpp
+$(builddir)/dflektr_cListener.o: dflektr/cListener.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread dflektr/cListener.cpp
 
-$(builddir)/dflektr_dflektr_main.o: dflektr_main.cpp
-	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread dflektr_main.cpp
+$(builddir)/dflektr_dflektr_main.o: dflektr/dflektr_main.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -pthread dflektr/dflektr_main.cpp
 
 clean:
 	rm -f *.o
