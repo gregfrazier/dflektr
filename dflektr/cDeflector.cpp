@@ -37,7 +37,7 @@ cDeflector::cDeflector(SOCKET cli_socket, struct sockaddr_in targ, struct sockad
 	}else{
 		// Parent
 		int status;
-		waitpid(pidChild, &status, NULL);
+		waitpid(pidChild, &status, 0);
 		return;
 	}
 
