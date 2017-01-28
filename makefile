@@ -43,7 +43,7 @@ CXX := c++
 # The directory for the build files, may be overridden on make command line.
 builddir = .
 
-all: $(builddir)/dflektr
+all: $(builddir)/dflektr.out
 
 $(builddir)/dflektr: $(builddir)/dflektr_cAnsiUtil.o $(builddir)/dflektr_cCmdParse.o $(builddir)/dflektr_cDeflector.o $(builddir)/dflektr_cListener.o $(builddir)/dflektr_dflektr_main.o
 	$(CXX) -o $@ $(LDFLAGS) $(builddir)/dflektr_cAnsiUtil.o $(builddir)/dflektr_cCmdParse.o $(builddir)/dflektr_cDeflector.o $(builddir)/dflektr_cListener.o $(builddir)/dflektr_dflektr_main.o -pthread
@@ -66,7 +66,7 @@ $(builddir)/dflektr_dflektr_main.o: dflektr/dflektr_main.cpp
 clean:
 	rm -f *.o
 	rm -f *.d
-	rm -f $(builddir)/dflektr
+	rm -f $(builddir)/dflektr.out
 
 .PHONY: all clean
 
